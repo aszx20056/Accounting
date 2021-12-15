@@ -7,5 +7,6 @@ namespace Accounting
     public interface IAppSettIng
     {
         string DataPath { get; }
+        string OptDataPath { get; }
     }
 }

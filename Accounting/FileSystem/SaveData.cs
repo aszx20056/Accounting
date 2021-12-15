@@ -6,19 +6,23 @@ namespace Accounting.FileSystem
 {
     public class SaveData
     {
-        AppSettIng AppSettIng = new AppSettIng();
+        private string SaveLoc { get; set; }
+        public SaveData(string SaveLoc)
+        {
+            this.SaveLoc = SaveLoc;
+        }
         public bool HasFile {
             get {
-                return File.Exists(AppSettIng.DataPath);
+                return File.Exists(SaveLoc);
             }
         }
         public void CreatSave()
         {
-            File.Create(AppSettIng.DataPath);
+            File.Create(SaveLoc);
         }
         public void ClearSave()
         {
-            File.Delete(AppSettIng.DataPath);
+            File.Delete(SaveLoc);
         }
     }
 }

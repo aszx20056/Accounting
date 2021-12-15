@@ -15,5 +15,12 @@ namespace Accounting
                 return Path.Combine(assemblyFolder, "Save.txt");
             }
         }
+
+        public string OptDataPath {
+            get {
+                string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                return Path.Combine(assemblyFolder, "OptData.txt");
+            }
+        }
     }
 }
