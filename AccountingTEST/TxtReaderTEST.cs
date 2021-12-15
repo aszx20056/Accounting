@@ -9,22 +9,20 @@ using Accounting;
 namespace AccountingTEST
 {
     [TestClass]
-    public class SaveDataTEST
+    public class TxtReaderTEST
     {
 
         [TestMethod]
         public void ClearSave()
         {
-            AppSettIng seeting = new AppSettIng();
-            SaveData sd = new SaveData(seeting.DataPath);
+            TxtReader sd = new TxtReader(TestSeeting.TxtPath);
             sd.ClearSave();
             sd.HasFile.Should().BeFalse();
         }
         [TestMethod]
         public void CreatSave()
         {
-            AppSettIng seeting = new AppSettIng();
-            SaveData sd = new SaveData(seeting.DataPath);
+            TxtReader sd = new TxtReader(TestSeeting.TxtPath);
             sd.ClearSave();
             sd.CreatSave();
             sd.HasFile.Should().BeTrue();
